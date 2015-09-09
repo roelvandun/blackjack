@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ConsoleInputTest {
+public class ConsoleTest {
 
     private Console console;
 
@@ -18,9 +18,9 @@ public class ConsoleInputTest {
     }
 
     @Test
-    public void out() {
+    public void itTellsTheUserToGiveInput() {
         String actual = console.getOutputStream().toString();
-        assertEquals("hello", actual);
+        assertEquals("Do you agree to stand?", actual);
     }
 
 

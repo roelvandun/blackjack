@@ -18,4 +18,10 @@ public class CardTest {
         assertTrue(card.getIndex() >= 0);
     }
 
+    @Test
+    public void itHasValue() throws Exception {
+        Card card =  new Card(0);
+        assertTrue(card.getValue() >= 0);
+    }
+
 }

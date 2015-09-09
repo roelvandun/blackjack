@@ -24,12 +24,12 @@ public class DeckTest {
         assertTrue(deck.getCardCount() == 52);
     }
 
-    //    @Test
-//    public void itDoesNotHaveTwoIdenticalCards() {
-//        Deck deck = new Deck();
-//        Card firstCard = deck.getCard();
-//        Card secondCard = deck.getCard();
-//        assertFalse(firstCard.getIndex() - secondCard.getIndex() == 0);
-//    }
+    @Test
+    public void itDoesNotHaveTwoIdenticalCards() {
+        Deck deck = new Deck();
+        Card firstCard = deck.getCard();
+        Card secondCard = deck.getCard();
+        assertFalse(firstCard.getIndex() - secondCard.getIndex() == 0);
+    }
 
 }

@@ -2,18 +2,22 @@ package com.philips;
 
 public class Game {
 
+    private final Player player;
+    private final Player dealer;
     private Deck deck;
 
     public Game() {
         this.deck = new Deck();
+        player = new Player();
+        dealer = new Player();
     }
 
-    public Player getPlayer1() {
-        return new Player();
+    public Player getPlayer() {
+        return player;
     }
 
     public Player getDealer() {
-        return new Player();
+        return dealer;
     }
 
     public Deck getDeck() {

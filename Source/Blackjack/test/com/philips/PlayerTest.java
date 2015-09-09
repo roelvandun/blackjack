@@ -1,6 +1,5 @@
 package com.philips;
 
-import junit.framework.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -44,6 +43,5 @@ public class PlayerTest {
         player.assignCard(new Card(2));
         assertEquals(player.getScore(), 3);
     }
-
 
 }

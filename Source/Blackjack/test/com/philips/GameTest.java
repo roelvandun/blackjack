@@ -2,6 +2,7 @@ package com.philips;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -15,10 +16,10 @@ public class GameTest {
     @Test
     public void itHasPlayers() throws Exception {
         Game game = new Game();
-        Player player1 = game.getPlayer1();
+        Player player = game.getPlayer();
         Player dealer = game.getDealer();
         assertNotNull(dealer);
-        assertNotNull(player1);
+        assertNotNull(player);
     }
 
     @Test
@@ -30,10 +31,17 @@ public class GameTest {
     @Test
     public void itAssignCard() throws Exception {
         Game game = new Game();
-        Player player1 = game.getPlayer1();
-        int oldCount = player1.getCardsCount();
-        game.assignCard(player1);
-        int newCount = player1.getCardsCount();
+        Player player = game.getPlayer();
+        int oldCount = player.getCardsCount();
+        game.assignCard(player);
+        int newCount = player.getCardsCount();
         assertTrue(newCount == oldCount + 1);
+    }
+
+    @Test
+    public void itPlaysWithTheSamePlayers() throws Exception {
+        Game game = new Game();
+        assertEquals(game.getPlayer(), game.getPlayer());
+        assertEquals(game.getDealer(), game.getDealer());
     }
 }

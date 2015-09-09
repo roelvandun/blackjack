@@ -17,4 +17,12 @@ public class Player {
     public List<Card> getCards() {
         return cards;
     }
+
+    public int getScore() {
+        int score = 0;
+        for (Card card : cards) {
+            score += card.getValue();
+        }
+        return score;
+    }
 }

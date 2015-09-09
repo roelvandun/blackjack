@@ -1,6 +1,5 @@
 package com.philips;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,5 +12,9 @@ public class Player {
 
     public void assignCard(Card card) {
         cards.add(card);
+    }
+
+    public List<Card> getCards() {
+        return cards;
     }
 }

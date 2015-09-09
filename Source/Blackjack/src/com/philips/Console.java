@@ -1,22 +1,32 @@
 package com.philips;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class Console {
-    private final PrintStream out;
-    private final ByteArrayOutputStream outputStream;
+    private PrintStream out;
+    private final Scanner scanner;
 
     public Console() {
-        outputStream = new ByteArrayOutputStream();
-        out = new PrintStream(outputStream);
+        out = createOut();
+        scanner = new Scanner(createIn());
     }
 
-    public PrintStream getOut() {
-        return out;
+    protected PrintStream createOut() {
+        return System.out;
     }
 
-    public ByteArrayOutputStream getOutputStream() {
-        return outputStream;
+    protected InputStream createIn() {
+        return System.in;
+    }
+
+    public void write(String text) {
+        out.print(text);
+    }
+
+    public String readLine() {
+        return scanner.next();
     }
 }

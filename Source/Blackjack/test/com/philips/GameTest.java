@@ -33,7 +33,7 @@ public class GameTest {
         Game game = new Game();
         Player player = game.getPlayer();
         int oldCount = player.getCardsCount();
-        game.assignCard(player);
+        game.dealCard(player);
         int newCount = player.getCardsCount();
         assertTrue(newCount == oldCount + 1);
     }
@@ -44,4 +44,18 @@ public class GameTest {
         assertEquals(game.getPlayer(), game.getPlayer());
         assertEquals(game.getDealer(), game.getDealer());
     }
+
+    @Test
+    public void itDealsCardsAtStart() throws Exception {
+        Game game = new Game();
+        assertEquals(game.getPlayer().getCardsCount(), 2);
+        assertEquals(game.getDealer().getCardsCount(), 2);
+    }
+
+//    @Test
+//    public void itCanDecideWinner() throws Exception {
+//        Game game = new Game();
+//        game.dealCard(game.getPlayer());
+//        game.
+//    }
 }

@@ -10,6 +10,14 @@ public class Game {
         this.deck = new Deck();
         player = new Player();
         dealer = new Player();
+        dealInitialCards();
+    }
+
+    private void dealInitialCards() {
+        dealCard(player);
+        dealCard(player);
+        dealCard(dealer);
+        dealCard(dealer);
     }
 
     public Player getPlayer() {
@@ -24,7 +32,7 @@ public class Game {
         return deck;
     }
 
-    public void assignCard(Player player) {
+    public void dealCard(Player player) {
         player.assignCard(deck.getCard());
     }
 }

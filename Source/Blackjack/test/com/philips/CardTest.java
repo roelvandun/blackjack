@@ -9,13 +9,13 @@ public class CardTest {
 
     @Test
     public void itCanCreateCard() {
-        assertNotNull(new Card());
+        assertNotNull(new Card(0));
     }
 
     @Test
     public void itHasIndex() throws Exception {
-        Card card =  new Card();
-        assertTrue(card.getIndex() > 0);
-        assertTrue(card.getIndex() < 14);
+        Card card =  new Card(0);
+        assertTrue(card.getIndex() >= 0);
     }
+
 }

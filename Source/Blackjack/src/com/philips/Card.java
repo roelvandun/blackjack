@@ -4,8 +4,8 @@ public class Card {
 
     private int index;
 
-    public Card() {
-        this.index = 1;
+    public Card(int index) {
+        this.index = index;
     }
 
     public int getIndex() {
